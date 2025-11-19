@@ -45,7 +45,8 @@ void display()
         return;
     }
     printf("Queue: ");
-    while (ptr != NULL) {
+    while (ptr != NULL) 
+    {
         printf("%d -> ", ptr->data);
         ptr = ptr->next;
     }
@@ -66,18 +67,14 @@ int main() {
                 scanf("%d", &value);
                 enqueue(value);
                 break;
-
             case 2:
                 dequeue();
                 break;
-
             case 3:
                 display();
                 break;
-
             case 4:
                 exit(0);
-
             default:
                 printf("Invalid choice!\n");
         }
