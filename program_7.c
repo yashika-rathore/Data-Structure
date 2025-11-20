@@ -34,17 +34,14 @@ scanf("%s",infix);
 while(infix[i]!='\0')
 {
     ch = infix[i];
-    printf("\n char at position %d is %c", i,ch);
     if(ch == '(')
     {
         top++;
         stk[top]=ch;
-        //printf("\n\t\t stk[top] = %c", stk[top]);
     }
     else if(isopd(ch))
     {
         opd[j] = ch;
-        //printf("\n\t\t\t opd[j] = %c", opd[j]);
         j++;
 
     }
@@ -54,7 +51,6 @@ while(infix[i]!='\0')
         {
             top++;
             stk[top]= ch;
-            //printf("\n\t\t stk[top] = %c", stk[top]);
         }
         else
         {
@@ -62,7 +58,6 @@ while(infix[i]!='\0')
             {
                 opd[j] = stk[top];
                 top--;
-                //printf("\n\t\t\t opd[j] = %c", opd[j]);
                 j++;
             }
             top++;
@@ -70,18 +65,11 @@ while(infix[i]!='\0')
         }
 
     }
-    /*else if(ch =='(')
-    {
-        top++;
-        stk[top] = ch;
-        //printf("\n\t\t stk[top] = %c", stk[top]);
-    }*/
     else
     {
         while(stk[top]!= '(')
         {
             opd[j] = stk[top];
-            //printf("\n\t\t\t opd[j] = %c", opd[j]);
             j++;
             top--;
         }
